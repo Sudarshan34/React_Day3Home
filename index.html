@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+
+        *{
+            box-sizing: border-box;
+           
+        }
+
+        body{
+            background-color: black;
+        }
+
+        #div1,#div2,#div3{
+            font-size: 28px;
+            color:  white;
+        }
+
+        #h1{
+            color: cyan;
+            border-bottom:2px solid white;
+            padding: 10px;
+
+        }
+        
+        #a{
+            color: cyan;
+        }
+
+        #root{
+            background-color: black;
+            padding: 10px;
+            margin-top: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+            border-radius: 20px;
+            border: 4px solid white;
+        }
+
+    @media (max-width: 768px) {
+    #div1, #div2, #div3 {
+      font-size: 18px; 
+    }
+  }
+
+
+    </style>
+</head>
+
+<body>
+    <div id="root">
+
+
+    </div>
+
+    <script type="text/babel">
+        const rootele = document.querySelector("#root");
+        const root = ReactDOM.createRoot(rootele)
+        const h1 = React.createElement("h1", {id:"h1"}, "Topics Covered")
+        const div1 = React.createElement("div", { id: "div1" }, React.createElement("p", {}, "Following is the list of all the topics we cover in the MDN covering area"),
+        )
+        const div2 = React.createElement("div", {id:"div2"},React.createElement("a", { href: 'https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web', target: '_blank' ,id:"a"}, "Getting started with the web"))
+        const div3 = React.createElement("div", {id:"div3"}, React.createElement("p", {}, "Provides the practical introduction to web developement beginners"))
+
+
+        const div4 = React.createElement("div", {id:"div2"},React.createElement("a", { href: 'https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/HTML_basics', target: '_blank' ,id:"a"}, "HTML-Structuring the web"))
+        const div5 = React.createElement("div", {id:"div3"}, React.createElement("p", {}, "HTML, or Hypertext Markup Language, is a markup language for the web that defines the structure of web pages. It is one of the most basic building blocks of every website, so it's crucial to learn if you want to have a career in web development."))
+
+        const div6 = React.createElement("div", {id:"div2"},React.createElement("a", { href: 'https://developer.mozilla.org/en-US/docs/Learn/CSS', target: '_blank' ,id:"a"}, "CSS - Styling  the web"))
+        const div7 = React.createElement("div", {id:"div3"}, React.createElement("p", {}, "CSS allows you to apply styles to web pages. More importantly, CSS enables you to do this independently of the HTML that makes up each web page. It describes how a webpage should look: it prescribes colours, fonts, spacing, and much more. In short, you can make your website look however you want."))
+
+
+
+        // root.render(div3)
+
+        function Comp() {
+            return (
+                <div>
+                    {h1}
+                    {div1}
+                    {div2}
+                    {div3}
+                    {div4}
+                    {div5}
+                    {div6}
+                    {div7}
+
+                </div>
+            )
+        }
+        root.render(<Comp/>)
+
+
+
+    </script>
+
+</body>
+
+
+
+</html>
